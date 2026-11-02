@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: ai-bug-triage-api
+  mvc:
+    problemdetails:
+      enabled: true   # validation errors are returned as RFC 7807 problem details
+
+triage:
+  # rules (default, offline, no key needed) | anthropic
+  provider: ${TRIAGE_PROVIDER:rules}
+  anthropic:
+    api-key: ${ANTHROPIC_API_KEY:}
+    model: ${ANTHROPIC_MODEL:claude-sonnet-5-5}
+    base-url: ${ANTHROPIC_BASE_URL:https://api.anthropic.com}
